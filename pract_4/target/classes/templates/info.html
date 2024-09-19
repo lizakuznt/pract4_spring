@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <h1 th:text="'Пользователь : ' + ${user_object.username}"></h1>
+  <div class="container">
+    <h2 th:text="'Роли : ' + ${user_object.roles}"></h2>
+    <p th:text="${user_object.active} == True ? 'Пользователь: Активный' : 'Пользователь: Неактивный'"></p>
+  </div>
+  <a th:href="'/admin/' + ${user_object.idUser} + '/update'"
+     class="btn btn-warning">Редактировать</a>
+  <a href="/admin/users" class="btn btn-success">Назад</a>
+</div>
+</body>
+</html>
